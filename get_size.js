@@ -1,7 +1,10 @@
 const axios = require('axios')
+const chalk = require('chalk')
 const filesize = require('filesize')
 const url = 'https://dl.fedoraproject.org/pub/DIRECTORY_SIZES.txt'
+const log = console.log
 
+log(chalk.bgBlue.white(`Retrieving directory size (${url})`))
 axios.get(url)
   .then((response) => {
     let file = response.data
@@ -29,5 +32,5 @@ axios.get(url)
     for (let unit of sizes) {
       sum += unit
     }
-    console.log(filesize(sum))
+    log(chalk.bgGreen.white(filesize(sum)))
   })
