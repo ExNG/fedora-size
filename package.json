@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "calc": "node get_size.js"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "filesize": "^3.6.1"
